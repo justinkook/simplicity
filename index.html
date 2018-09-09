@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Employee List Web App</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <nav class="nav nav-right">
+    <h1>Employee List</h1>
+  </nav>
+  <!-- Side navigation -->
+  <div class="sidenav">
+    <a class="sidePrint" href="#printForm">Print</a>
+    <a class="sideVerify" href="#verifyForm">Verify</a>
+    <a class="sideLookup" href="#lookupForm">Lookup</a>
+    <a class="sideContains" href="#containsForm">Contains</a>
+    <a class="sideUpdate" href="#updateForm">Update</a>
+    <a class="sideAdd" href="#addForm">Add</a>
+    <a class="sideDelete" href="#deleteForm">Delete</a>
+  </div>
+  <main>
+    <div class="content">
+      <form id="printForm" class="displayOff">
+          <input id="print" type="submit" value="Verify">
+      </form>
+      <form id="verifyForm" class="displayOff">
+        <input id="inputVeri" type="text" placeholder="employee name" name="employeeName">
+        <input id="verify" type="submit" value="Verify">
+      </form>
+      <form id="lookupForm" class="displayOff">
+        <input id="inputLook" type="text" placeholder="employee name" name="employeeName">
+        <input id="lookup" type="submit" value="Lookup">
+      </form>
+      <form id="containsForm" class="displayOff">
+        <input id="inputCont" type="text" placeholder="employee name" name="employeeName">
+        <input id="contains" type="submit" value="Contains">
+      </form>
+      <form id="updateForm" class="displayOff">
+        Name <input id="updateName" class="input" type="text" placeholder="employee name" name="employeeName"><br>
+        Field <input id="updateField" type="text" placeholder="employee number" name="employeeNum"><br>
+        Value <input id="updateValue" type="text" placeholder="phone number" name="phoneNumber"><br>
+        <input id="update" type="submit" value="Update">
+      </form>
+      <form id="addForm" class="displayOff">
+        Name <input id="addName" type="text" placeholder="employee name" name="employeeName"><br>
+        Number <input id="addNum" type="text" placeholder="employee number" name="employeeNum"><br>
+        Phone <input id="addPhone" type="text" placeholder="phone number" name="phoneNumber"><br>
+        <input id="add" type="submit" value="Add">
+      </form>
+      <form id="deleteForm" class="displayOff">
+        <input id="deleteName" type="text" placeholder="employee name" name="employeeName">
+        <input id="delete" type="submit" value="Delete">
+      </form>
+    </div>
+    <table id="listArea">
+    </table>
+  </main>
+  <script src="render.js"></script>
+  <script src="dom.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
