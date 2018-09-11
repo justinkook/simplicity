@@ -28,8 +28,8 @@ main {
 #listArea {
     margin-right: 60px;
     display: grid;
-    grid-template-columns: repeat(6,1fr);
-    grid-template-rows: repeat(4,1fr);
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: auto;
 }
 
 tbody {
@@ -37,7 +37,7 @@ tbody {
     grid-column: span 1;
     grid-row: span 1;
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
 }
 
@@ -123,6 +123,6 @@ nav h1 {
         margin-right: 80px;
         display: grid;
         grid-template-columns: repeat(3,1fr);
-        grid-template-rows: repeat(8,1fr);
+        grid-template-rows: auto;
     }
 }
