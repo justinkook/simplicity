@@ -220,10 +220,10 @@
 
   const deletefy = (e) => {
     e.preventDefault();
-    emptyify();
+    emptify();
     let deleteName = $('#deleteName').val();
     let index = employeeList.findIndex(e => e.name === deleteName);
-    employeeList.splice(index, 1);
+    employeeList.splice(index);
     employeeList.forEach(e => {
       $('#listArea').append(`<th>${'Name:'}</th><td>${e.name}</td>`);
       $('#listArea').append(`<th>${'OfficeNum:'}</th><td>${e.officeNum}</td>`);
