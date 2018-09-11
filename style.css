@@ -13,26 +13,27 @@ ul, li {
 }
 
 main {
-    margin-left: 250px;
+    margin-left: 200px;
     height: 80vh;
     font-family: 'Open Sans', sans-serif;
 }
 
 .content {
     margin-top: 15px;
-    margin-right: 80px;
+    margin-right: 60px;
     padding-bottom: 15px;
     text-align: center;
+    border-bottom: 1px solid black;
 }
 #listArea {
-    margin-right: 80px;
+    margin-right: 60px;
     display: grid;
     grid-template-columns: repeat(6,1fr);
-    grid-template-rows: repeat(6,1fr);
+    grid-template-rows: repeat(4,1fr);
 }
 
 tbody {
-    border-top: 1px solid black;
+    border-bottom: 1px solid black;
     grid-column: span 1;
     grid-row: span 1;
     display: flex;
@@ -115,7 +116,13 @@ nav h1 {
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
+@media screen and (max-height: 600px) {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
+    #listArea {
+        margin-right: 80px;
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: repeat(8,1fr);
+    }
 }
