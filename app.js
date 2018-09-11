@@ -133,6 +133,7 @@
 
   const printify = (e) => {
     e.preventDefault();
+    emptify();
     employeeList.forEach(e => {
       $('#listArea').append(`<th>${'Name:'}</th><td>${e.name}</td>`);
       $('#listArea').append(`<th>${'OfficeNum:'}</th><td>${e.officeNum}</td>`);
@@ -141,11 +142,13 @@
   };
   const verifying = (e) => {
     e.preventDefault();
+    emptify();
     $('#listArea').text(employeeList.some(e => e.name === $('#inputVeri').val()));
   };
 
   const lookupfy = (e) => {
     e.preventDefault();
+    emptify();
     let userInput = $('#inputLook').val();
     const filteredArr = employeeList.filter(e => e.name === userInput);
     filteredArr.forEach(e => {
@@ -157,6 +160,7 @@
 
   const containfy = (e) => {
     e.preventDefault();
+    emptify();
     employeeList.filter(e => e.name.includes($('#inputCont').val())).forEach(e => {
       $('#listArea').append(`<th>${'Name:'}</th><td>${e.name}</td>`);
       $('#listArea').append(`<th>${'OfficeNum:'}</th><td>${e.officeNum}</td>`);
@@ -166,6 +170,7 @@
 
   const updatefy = (e) => {
     e.preventDefault();
+    emptify();
     let updateInput = $('#updateName').val();
     let updateField = $('#updateField').val();
     let updateValue = $('#updateValue').val();
@@ -195,6 +200,7 @@
 
   const addfy = (e) => {
     e.preventDefault();
+    emptify();
     let addName = $('#addName').val();
     let addNum = $('#addNum').val();
     let addPhone = $('#addPhone').val();
@@ -214,6 +220,7 @@
 
   const deletefy = (e) => {
     e.preventDefault();
+    emptyify();
     let deleteName = $('#deleteName').val();
     let index = employeeList.findIndex(e => e.name == deleteName);
     employeeList.splice(index, 1);
