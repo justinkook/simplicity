@@ -26,10 +26,10 @@ main {
     border-bottom: 1px solid black;
 }
 #listArea {
-    display: block;
     margin-right: 80px;
-    overflow-wrap: initial;
+    width: 80vh;
 }
+
 th, td {
     border-bottom: 1px solid #ddd;
     padding: 15px;
@@ -63,6 +63,7 @@ input[type=submit]:hover {
     color:black;
     text-transform: uppercase;
 }
+
 /* Turns the forms off */
 form {
     display: none;
