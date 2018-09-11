@@ -222,7 +222,7 @@
     e.preventDefault();
     emptyify();
     let deleteName = $('#deleteName').val();
-    let index = employeeList.findIndex(e => e.name == deleteName);
+    let index = employeeList.findIndex(e => e.name === deleteName);
     employeeList.splice(index, 1);
     employeeList.forEach(e => {
       $('#listArea').append(`<th>${'Name:'}</th><td>${e.name}</td>`);
