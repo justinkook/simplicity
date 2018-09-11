@@ -63,9 +63,8 @@ input[type=submit]:hover {
     color:black;
     text-transform: uppercase;
 }
-
 /* Turns the forms off */
-.displayOff {
+form {
     display: none;
 }
 .displayOn {
