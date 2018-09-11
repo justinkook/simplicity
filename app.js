@@ -134,9 +134,9 @@
   const printify = (e) => {
     e.preventDefault();
     employeeList.forEach(e => {
-      $('#listArea').append(`<th>${'Name'}</th><td>${e.name}</td>`);
-      $('#listArea').append(`<th>${'OfficeNum'}</th><td>${e.officeNum}</td>`);
-      $('#listArea').append(`<th>${'PhoneNum'}</th><td>${e.phoneNum}</td>`);
+      $('#listArea').append(`<th>${'Name:'}</th><td>${e.name}</td>`);
+      $('#listArea').append(`<th>${'OfficeNum:'}</th><td>${e.officeNum}</td>`);
+      $('#listArea').append(`<th>${'PhoneNum:'}</th><td>${e.phoneNum}</td>`);
     });
   };
   const verifying = (e) => {
@@ -149,18 +149,18 @@
     let userInput = $('#inputLook').val();
     const filteredArr = employeeList.filter(e => e.name === userInput);
     filteredArr.forEach(e => {
-      $('#listArea').append(`<th>${'Name'}</th><td>${e.name}</td>`);
-      $('#listArea').append(`<th>${'OfficeNum'}</th><td>${e.officeNum}</td>`);
-      $('#listArea').append(`<th>${'PhoneNum'}</th><td>${e.phoneNum}</td>`);
+      $('#listArea').append(`<th>${'Name:'}</th><td>${e.name}</td>`);
+      $('#listArea').append(`<th>${'OfficeNum:'}</th><td>${e.officeNum}</td>`);
+      $('#listArea').append(`<th>${'PhoneNum:'}</th><td>${e.phoneNum}</td>`);
     });
   };
 
   const containfy = (e) => {
     e.preventDefault();
     employeeList.filter(e => e.name.includes($('#inputCont').val())).forEach(e => {
-      $('#listArea').append(`<th>${'Name'}</th><td>${e.name}</td>`);
-      $('#listArea').append(`<th>${'OfficeNum'}</th><td>${e.officeNum}</td>`);
-      $('#listArea').append(`<th>${'PhoneNum'}</th><td>${e.phoneNum}</td>`);
+      $('#listArea').append(`<th>${'Name:'}</th><td>${e.name}</td>`);
+      $('#listArea').append(`<th>${'OfficeNum:'}</th><td>${e.officeNum}</td>`);
+      $('#listArea').append(`<th>${'PhoneNum:'}</th><td>${e.phoneNum}</td>`);
     });
   };
 
@@ -187,9 +187,9 @@
         $('#listArea').text('ERROR: Input field as name, officeNum, or phoneNum');
     }
     filteredName.forEach(e => {
-      $('#listArea').append(`<th>${'Name'}</th><td>${e.name}</td>`);
-      $('#listArea').append(`<th>${'OfficeNum'}</th><td>${e.officeNum}</td>`);
-      $('#listArea').append(`<th>${'PhoneNum'}</th><td>${e.phoneNum}</td>`);
+      $('#listArea').append(`<th>${'Name:'}</th><td>${e.name}</td>`);
+      $('#listArea').append(`<th>${'OfficeNum:'}</th><td>${e.officeNum}</td>`);
+      $('#listArea').append(`<th>${'PhoneNum:'}</th><td>${e.phoneNum}</td>`);
     });
   };
 
@@ -206,9 +206,9 @@
     }];
     let addedList = employeeList.concat(addArr);
     addedList.forEach(e => {
-      $('#listArea').append(`<th>${'Name'}</th><td>${e.name}</td>`);
-      $('#listArea').append(`<th>${'OfficeNum'}</th><td>${e.officeNum}</td>`);
-      $('#listArea').append(`<th>${'PhoneNum'}</th><td>${e.phoneNum}</td>`);
+      $('#listArea').append(`<th>${'Name:'}</th><td>${e.name}</td>`);
+      $('#listArea').append(`<th>${'OfficeNum:'}</th><td>${e.officeNum}</td>`);
+      $('#listArea').append(`<th>${'PhoneNum:'}</th><td>${e.phoneNum}</td>`);
     });
   };
 
@@ -218,9 +218,9 @@
     let index = employeeList.findIndex(e => e.name == deleteName);
     employeeList.splice(index, 1);
     employeeList.forEach(e => {
-      $('#listArea').append(`<th>${'Name'}</th><td>${e.name}</td>`);
-      $('#listArea').append(`<th>${'OfficeNum'}</th><td>${e.officeNum}</td>`);
-      $('#listArea').append(`<th>${'PhoneNum'}</th><td>${e.phoneNum}</td>`);
+      $('#listArea').append(`<th>${'Name:'}</th><td>${e.name}</td>`);
+      $('#listArea').append(`<th>${'OfficeNum:'}</th><td>${e.officeNum}</td>`);
+      $('#listArea').append(`<th>${'PhoneNum:'}</th><td>${e.phoneNum}</td>`);
     });
   };
 
