@@ -8,6 +8,11 @@ nav {
     padding: 20px;
     justify-content: flex-end;
 }
+
+a:-webkit-any-link {
+    text-decoration: none;
+}
+
 ul, li {
     list-style-type: none;
 }
