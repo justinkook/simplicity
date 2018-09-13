@@ -1,16 +1,11 @@
 body {
     margin: 0px;
 }
-nav {
-    background-color:#000033;
-    display: flex;
-    font-family: 'Montserrat', sans-serif;
-    padding: 20px;
-    justify-content: flex-end;
-}
 
-a:-webkit-any-link {
-    text-decoration: none;
+.wrapper {
+    display:flex;
+    align-items: stretch;
+    width: 100%;
 }
 
 ul, li {
@@ -18,27 +13,88 @@ ul, li {
 }
 
 main {
-    margin-left: 200px;
-    height: 80vh;
-    font-family: 'Open Sans', sans-serif;
+    height: 100vh;
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+    border: 20px solid white;
+    background-image: url(images/charlotte-coneybeer-108074-unsplash.jpg);
+    background-size: 100%;
+    opacity: .9;
+}
+.default {
+    position: absolute;
+    top: 360px;
+    left: 570px;
+    color: white;
 }
 
-.content {
-    margin-top: 15px;
-    margin-right: 60px;
-    padding-bottom: 15px;
+.default h1 {
+    animation: .5s ease-in 1s 1 slideInFromLeft;
+    font-size: 70px;
+    text-transform: uppercase;
+    font-weight: bolder;
+}
+
+.default a {
+    color: rgb(248,242,133);
+    font-size: 70px;
+    text-transform: uppercase;
+    font-weight: bolder;
+}
+
+.default h6 {
+    animation: .5s ease-in 1s 1 slideInFromRight;
     text-align: center;
-    border-bottom: 1px solid black;
+    margin-top: 90px;
+}
+
+@keyframes slideInFromLeft {
+    0% {
+      transform: translateX(-5%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+}
+@keyframes slideInFromRight {
+    0% {
+      transform: translateX(5%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+}
+@keyframes slideLeft {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-20%);
+    }
+}
+
+h6 {
+    font-size: 25px;
+    color: white;
+    margin-bottom: 20px;
+}
+.content {
+    margin-top: 10px;
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-top: 25px;
 }
 #listArea {
     margin-right: 60px;
+    padding: 20px;
     display: grid;
     grid-template-columns: repeat(3,1fr);
     grid-template-rows: auto;
+    color: white;
 }
 
 tbody {
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid white;
     grid-column: span 1;
     grid-row: span 1;
     display: flex;
@@ -50,39 +106,46 @@ th, td {
     padding: 15px;
 }
 tbody:hover {
-    background-color: #f5f5f5;
+    background-color: rgba(47,23,0,.5);
 }
 form {
-    text-align: right;
+    text-align: left;
 }
 
 input[type=text]{
     margin-bottom: 10px;
     border-radius: 5px;
-    width: 400px;
+    max-width: 400px;
     height: 35px;
-}
-input[type=submit] {
-    border-radius: 5px;
-    background-color: #1DA1F2;
-    color: white;
-    text-decoration: none;
-    padding: 15px;
-    margin: 4px 2px;
-    text-transform: uppercase;
-    cursor: pointer;
-}
-
-input[type=submit]:hover {
-    background-color: white;
-    color:black;
-    text-transform: uppercase;
+    cursor: text;
 }
 
 /* Turns the forms off */
 form {
     display: none;
 }
+
+.fa-chevron-circle-left {
+    color: white;
+    padding-bottom: 20px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+.fa-chevron-circle-left:hover {
+    animation: .3s ease-in 0s 1 slideLeft;
+    animation-fill-mode: forwards;
+}
+.fa-search {
+    color: white;
+    margin-left: 20px;
+    padding-top: 10px;
+    cursor: pointer;
+}
+
+.fa-search:hover {
+    color: black;
+}
+
 .displayOn {
     display: block;
 }
@@ -92,42 +155,80 @@ nav h1 {
     color: white;
 }
 /* The sidebar menu*/
-.sidenav {
+#sidenav {
+    font-family: 'Montserrat', sans-serif;
     float:left; 
-    height: 90vh; /* Full-height: remove this if you want "auto" height */
-    width: 160px; /* Set the width of the sidebar */
+    min-height: 100vh; /* Full-height: remove this if you want "auto" height */
+    width: 250px; /* Set the width of the sidebar */
     z-index: 1; /* Stay on top */
     top: 85px; /* Stay at the top */
     left: 0;
-    background-color: #1DA1F2; /* Black */
-    /*overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 30px;
-    text-transform: capitalize;
+    background-color: rgb(51,51,51); /* Black */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 230px;
+    font-weight: 300;
+}
+.active {
+    margin-left: -250px;
+}
+
+.fa-address-book {
+    color: white;
+    padding: 1px 18px 4px 36px;
+    margin-left: 45px;
+}
+
+h4 {
+    padding: 6px 18px 20px 36px;
+    text-decoration: none;
+    font-size: 25px;
+    color: rgb(248,242,133);
+    text-transform: uppercase;
 }
 
 /* The navigation menu links */
-.sidenav a {
-    padding: 6px 8px 6px 16px;
+#sidenav a:nth-child(n+2) {
+    padding: 6px 8px 14px 36px;
     text-decoration: none;
     font-size: 25px;
-    color: white;
+    color: rgb(145,145,144);
+    text-transform: uppercase;
     display: block;
 }
 
 /* When you mouse over the navigation links, change their color */
-.sidenav a:hover {
+a:hover {
+    text-decoration: none;
+}
+#sidenav a:hover:nth-child(n+2) {
     background-color: white;
     color: black;
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
-@media screen and (max-height: 600px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
+@media only screen and (max-height: 600px) {
+    #sidenav {padding-top: 25px;}
+    #sidenav a {font-size: 18px;}
+    .default {position: absolute; top: 150px;}
+}
+
+@media (max-width: 1011px) {
+    #sidenav {
+        margin-left: -250px;
+    }
+    #sidenav.active {
+        margin-left: 0px;
+    }
+    .default {
+        position: absolute;
+        left: 120px;
+    }
+    
+}
+@media (max-width: 760px) {
     #listArea {
-        margin-right: 80px;
         display: grid;
-        grid-template-columns: repeat(3,1fr);
+        grid-template-columns: repeat(1,1fr);
         grid-template-rows: auto;
     }
 }

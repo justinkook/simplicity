@@ -21,7 +21,7 @@ const $ = function (sel) {
 
     const toggleClass = function (className) {
       for (let i = 0; i < nodeList.length; i++) {
-        nodeList[i].classList.toggleClass(className);
+        nodeList[i].classList.toggle(className);
       }
     }
   

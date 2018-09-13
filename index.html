@@ -6,64 +6,88 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Employee List Web App</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather|Montserrat" rel="stylesheet">
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <nav clas="col md 12">
-    <a href="javascript:window.location.reload(true)"><h1>Employee List</h1></a>
-  </nav>
-  <!-- Side navigation -->
-  <div class="sidenav">
-    <a class="sidePrint" href="#printForm">Print</a>
-    <a class="sideVerify" href="#verifyForm">Verify</a>
-    <a class="sideLookup" href="#lookupForm">Lookup</a>
-    <a class="sideContains" href="#containsForm">Contains</a>
-    <a class="sideUpdate" href="#updateForm">Update</a>
-    <a class="sideAdd" href="#addForm">Add</a>
-    <a class="sideDelete" href="#deleteForm">Delete</a>
+  <div class="wrapper">
+
+    <!-- Side navigation -->
+    <nav id="sidenav">
+      <a href="javascript:history.go(0)"><i class="far fa-address-book fa-3x"></i>
+        <h4>Simplicity</h4>
+      </a>
+      <a class="sidePrint" href="#printForm">Print</a>
+      <a class="sideVerify" href="#verifyForm">Verify</a>
+      <a class="sideLookup" href="#lookupForm">Lookup</a>
+      <a class="sideContains" href="#containsForm">Contains</a>
+      <a class="sideUpdate" href="#updateForm">Update</a>
+      <a class="sideAdd" href="#addForm">Add</a>
+      <a class="sideDelete" href="#deleteForm">Delete</a>
+    </nav>
+    <main>
+      <div class="content">
+        <form class="default displayOn">
+          <h1>Welcome to <a href="#">Simplicity</a></h1>
+          <h6><i id="sidebarCollapse" class="fas fa-chevron-circle-left fa-2x"></i>
+            The Minimalists Directory.</h6>
+        </form>
+        <form id="printForm">
+          <i id="sidebarCollapse" class="fas fa-chevron-circle-left fa-2x"></i>
+          <h6>The Minimalists Directory.</h6>
+          <i id="print" class="fas fa-search fa-lg"></i>
+        </form>
+        <form id="verifyForm">
+          <i id="sidebarCollapse" class="fas fa-chevron-circle-left fa-2x"></i>
+          <h6>The Minimalists Directory.</h6>
+          <input id="inputVeri" class="col lg 5" type="text" placeholder="employee name" name="employeeName">
+          <i id="verify" class="fas fa-search fa-lg"></i>
+        </form>
+        <form id="lookupForm">
+          <i id="sidebarCollapse" class="fas fa-chevron-circle-left fa-2x"></i>
+          <h6>The Minimalists Directory.</h6>
+          <input id="inputLook" class="col lg 5" type="text" placeholder="employee name" name="employeeName">
+          <i id="lookup" class="fas fa-search fa-lg"></i>
+        </form>
+        <form id="containsForm">
+          <i id="sidebarCollapse" class="fas fa-chevron-circle-left fa-2x"></i>
+          <h6>The Minimalists Directory.</h6>
+          <input id="inputCont" class="col lg 5" type="text" placeholder="employee name" name="employeeName">
+          <i id="contains" class="fas fa-search fa-lg"></i>
+        </form>
+        <form id="updateForm">
+          <i id="sidebarCollapse" class="fas fa-chevron-circle-left fa-2x"></i>
+          <h6>The Minimalists Directory.</h6>
+          <input id="updateName" class="col lg 5" type="text" placeholder="employee name" name="employeeName"><br>
+          <input id="updateField" class="col lg 5" type="text" placeholder="field: name/officeNum/phoneNum" name="employeeNum"><br>
+          <input id="updateValue" class="col lg 5" type="text" placeholder="new value" name="phoneNumber">
+          <i id="update" class="fas fa-search fa-lg"></i>
+        </form>
+        <form id="addForm">
+          <i id="sidebarCollapse" class="fas fa-chevron-circle-left fa-2x"></i>
+          <h6>The Minimalists Directory.</h6>
+          <input id="addName" class="col lg 5" type="text" placeholder="employee name" name="employeeName"><br>
+          <input id="addNum" class="col lg 5" type="text" placeholder="employee number" name="employeeNum"><br>
+          <input id="addPhone" class="col lg 5" type="text" placeholder="phone number" name="phoneNumber">
+          <i id="add" class="fas fa-search fa-lg"></i>
+        </form>
+        <form id="deleteForm">
+          <i id="sidebarCollapse" class="fas fa-chevron-circle-left fa-2x"></i>
+          <h6>The Minimalists Directory.</h6>
+          <input id="deleteName" class="col lg 4" type="text" placeholder="employee name" name="employeeName">
+          <i id="delete" class="fas fa-search fa-lg"></i>
+        </form>
+      </div>
+      <table id="listArea">
+      </table>
+    </main>
+    <script src="render.js"></script>
+    <script src="dom.js"></script>
+    <script src="app.js"></script>
   </div>
-  <main>
-    <div class="content">
-      <form id="printForm">
-          <input id="print" type="submit" value="Print">
-      </form>
-      <form id="verifyForm">
-        <input id="inputVeri" class="col md 4" type="text" placeholder="employee name" name="employeeName">
-        <input id="verify" type="submit" value="Verify">
-      </form>
-      <form id="lookupForm">
-        <input id="inputLook" class="col md 4" type="text" placeholder="employee name" name="employeeName">
-        <input id="lookup" type="submit" value="Lookup">
-      </form>
-      <form id="containsForm">
-        <input id="inputCont" class="col md 4" type="text" placeholder="employee name" name="employeeName">
-        <input id="contains" type="submit" value="Contains">
-      </form>
-      <form id="updateForm">
-        Name <input id="updateName" class="col md 4" type="text" placeholder="employee name" name="employeeName"><br>
-        Field <input id="updateField" class="col md 4" type="text" placeholder="employee number" name="employeeNum"><br>
-        Value <input id="updateValue" class="col md 4" type="text" placeholder="phone number" name="phoneNumber"><br>
-        <input id="update" type="submit" value="Update">
-      </form>
-      <form id="addForm">
-        Name <input id="addName" class="col md 4" type="text" placeholder="employee name" name="employeeName"><br>
-        Number <input id="addNum" class="col md 4" type="text" placeholder="employee number" name="employeeNum"><br>
-        Phone <input id="addPhone" class="col md 4" type="text" placeholder="phone number" name="phoneNumber"><br>
-        <input id="add" type="submit" value="Add">
-      </form>
-      <form id="deleteForm">
-        <input id="deleteName" class="col md 4" type="text" placeholder="employee name" name="employeeName">
-        <input id="delete" type="submit" value="Delete">
-      </form>
-    </div>
-    <table id="listArea">
-    </table>
-  </main>
-  <script src="render.js"></script>
-  <script src="dom.js"></script>
-  <script src="app.js"></script>
 </body>
 
 </html>
