@@ -31,7 +31,7 @@ main {
 }
 
 .default h1 {
-    animation: .3s ease-in .8s 1 slideInFromRight;
+    animation: .3s ease-in .3s 1 slideInFromRight;
     transition-timing-function:cubic-bezier(.25,.25,.75,.75);
     font-size: 70px;
     text-transform: uppercase;
@@ -46,7 +46,7 @@ main {
 }
 
 .default h6 {
-    animation: .5s ease-in .8s 1 slideInFromRight;
+    animation: .4s ease-in .3s 1 slideInFromRight;
     transition-timing-function:cubic-bezier(.25,.25,.75,.75);
     text-align: center;
     margin-top: 90px;
