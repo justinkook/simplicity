@@ -31,7 +31,8 @@ main {
 }
 
 .default h1 {
-    animation: .3s ease-in .7s 1 slideInFromLeft;
+    animation: .3s ease-in .8s 1 slideInFromRight;
+    transition-timing-function:cubic-bezier(.25,.25,.75,.75);
     font-size: 70px;
     text-transform: uppercase;
     font-weight: bolder;
@@ -45,19 +46,12 @@ main {
 }
 
 .default h6 {
-    animation: .3s ease-in .7s 1 slideInFromRight;
+    animation: .5s ease-in .8s 1 slideInFromRight;
+    transition-timing-function:cubic-bezier(.25,.25,.75,.75);
     text-align: center;
     margin-top: 90px;
 }
 
-@keyframes slideInFromLeft {
-    0% {
-      transform: translateX(-5%);
-    }
-    100% {
-      transform: translateX(0);
-    }
-}
 @keyframes slideInFromRight {
     0% {
       transform: translateX(5%);
@@ -87,7 +81,7 @@ h6 {
     padding-top: 25px;
 }
 #listArea {
-    margin-right: 60px;
+    margin-right: 20px;
     padding: 20px;
     display: grid;
     grid-template-columns: repeat(3,1fr);
@@ -208,13 +202,13 @@ a:hover {
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
-@media only screen and (max-height: 600px) {
-    #sidenav {padding-top: 25px;}
+@media only screen and (max-height: 743px) {
+    #sidenav {padding-top: 95px;}
     #sidenav a {font-size: 18px;}
-    .default {position: absolute; top: 150px;}
+    .default {position: absolute; top: 240px;}
 }
 
-@media (max-width: 1011px) {
+@media (max-width: 1051px) {
     #sidenav {
         margin-left: -250px;
     }
@@ -222,15 +216,17 @@ a:hover {
         margin-left: 0px;
     }
     .default {
-        position: absolute;
-        left: 120px;
+        position: absolute; top: 240px; left: 280px;
     }
-    
 }
-@media (max-width: 760px) {
+@media (max-width: 450px) {
     #listArea {
         display: grid;
         grid-template-columns: repeat(1,1fr);
         grid-template-rows: auto;
     }
+}
+@media only screen and (max-height: 450px) {
+    #sidenav {padding-top: 15px;}
+    #sidenav a {font-size: 18px;}
 }
