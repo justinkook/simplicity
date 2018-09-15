@@ -1,48 +1,49 @@
 const state = {
   employeeList: [{
-    name: 'Jan',
-    officeNum: 1,
-    phoneNum: '222-222-2222'
-  },
-  {
-    name: 'Juan',
-    officeNum: 304,
-    phoneNum: '489-789-8789'
-  },
-  {
-    name: 'Margie',
-    officeNum: 789,
-    phoneNum: '789-789-7897'
-  },
-  {
-    name: 'Sara',
-    officeNum: 32,
-    phoneNum: '222-789-4654'
-  },
-  {
-    name: 'Tyrell',
-    officeNum: 3,
-    phoneNum: '566-621-0452'
-  },
-  {
-    name: 'Tasha',
-    officeNum: 213,
-    phoneNum: '789-766-5675'
-  },
-  {
-    name: 'Ty',
-    officeNum: 211,
-    phoneNum: '789-766-7865'
-  },
-  {
-    name: 'Sarah',
-    officeNum: 345,
-    phoneNum: '222-789-5231'
-  }],
+      name: 'Jan',
+      officeNum: 1,
+      phoneNum: '222-222-2222'
+    },
+    {
+      name: 'Juan',
+      officeNum: 304,
+      phoneNum: '489-789-8789'
+    },
+    {
+      name: 'Margie',
+      officeNum: 789,
+      phoneNum: '789-789-7897'
+    },
+    {
+      name: 'Sara',
+      officeNum: 32,
+      phoneNum: '222-789-4654'
+    },
+    {
+      name: 'Tyrell',
+      officeNum: 3,
+      phoneNum: '566-621-0452'
+    },
+    {
+      name: 'Tasha',
+      officeNum: 213,
+      phoneNum: '789-766-5675'
+    },
+    {
+      name: 'Ty',
+      officeNum: 211,
+      phoneNum: '789-766-7865'
+    },
+    {
+      name: 'Sarah',
+      officeNum: 345,
+      phoneNum: '222-789-5231'
+    }
+  ],
 
   runDisplay: {
-    printOn: () => {
-      state.runCommand.emptify();
+
+    clearDisplay: (sel) => {
       $('.default').removeClass('displayOn');
       $('#verifyForm').removeClass('displayOn');
       $('#lookupForm').removeClass('displayOn');
@@ -50,73 +51,36 @@ const state = {
       $('#containsForm').removeClass('displayOn');
       $('#updateForm').removeClass('displayOn');
       $('#deleteForm').removeClass('displayOn');
-      $('#printForm').addClass('displayOn');
+      $('#printForm').removeClass('displayOn');
+      $(sel).addClass('displayOn');
+    },
+    printOn: () => {
+      state.runCommand.emptify();
+      state.runDisplay.clearDisplay('#printForm');
     },
     verifyOn: () => {
       state.runCommand.emptify();
-      $('.default').removeClass('displayOn');
-      $('#lookupForm').removeClass('displayOn');
-      $('#addForm').removeClass('displayOn');
-      $('#containsForm').removeClass('displayOn');
-      $('#updateForm').removeClass('displayOn');
-      $('#deleteForm').removeClass('displayOn');
-      $('#printForm').removeClass('displayOn');
-      $('#verifyForm').addClass('displayOn');
+      state.runDisplay.clearDisplay('#verifyForm');
     },
     lookupOn: () => {
       state.runCommand.emptify();
-      $('.default').removeClass('displayOn');
-      $('#addForm').removeClass('displayOn');
-      $('#containsForm').removeClass('displayOn');
-      $('#updateForm').removeClass('displayOn');
-      $('#deleteForm').removeClass('displayOn');
-      $('#printForm').removeClass('displayOn');
-      $('#verifyForm').removeClass('displayOn');
-      $('#lookupForm').addClass('displayOn');
+      state.runDisplay.clearDisplay('#lookupForm');
     },
     addOn: () => {
       state.runCommand.emptify();
-      $('.default').removeClass('displayOn');
-      $('#containsForm').removeClass('displayOn');
-      $('#updateForm').removeClass('displayOn');
-      $('#deleteForm').removeClass('displayOn');
-      $('#printForm').removeClass('displayOn');
-      $('#verifyForm').removeClass('displayOn');
-      $('#lookupForm').removeClass('displayOn');
-      $('#addForm').addClass('displayOn');
+      state.runDisplay.clearDisplay('#addForm');
     },
     containsOn: () => {
       state.runCommand.emptify();
-      $('.default').removeClass('displayOn');
-      $('#updateForm').removeClass('displayOn');
-      $('#deleteForm').removeClass('displayOn');
-      $('#printForm').removeClass('displayOn');
-      $('#verifyForm').removeClass('displayOn');
-      $('#lookupForm').removeClass('displayOn');
-      $('#addForm').removeClass('displayOn');
-      $('#containsForm').addClass('displayOn');
+      state.runDisplay.clearDisplay('#containsForm');
     },
     updateOn: () => {
       state.runCommand.emptify();
-      $('.default').removeClass('displayOn');
-      $('#deleteForm').removeClass('displayOn');
-      $('#printForm').removeClass('displayOn');
-      $('#verifyForm').removeClass('displayOn');
-      $('#lookupForm').removeClass('displayOn');
-      $('#addForm').removeClass('displayOn');
-      $('#containsForm').removeClass('displayOn');
-      $('#updateForm').addClass('displayOn');
+      state.runDisplay.clearDisplay('#updateForm');
     },
     deleteOn: () => {
       state.runCommand.emptify();
-      $('.default').removeClass('displayOn');
-      $('#printForm').removeClass('displayOn');
-      $('#verifyForm').removeClass('displayOn');
-      $('#lookupForm').removeClass('displayOn');
-      $('#addForm').removeClass('displayOn');
-      $('#containsForm').removeClass('displayOn');
-      $('#updateForm').removeClass('displayOn');
-      $('#deleteForm').addClass('displayOn');
+      state.runDisplay.clearDisplay('#deleteForm');
     },
     sideBarToggle: (e) => {
       e.preventDefault();
@@ -218,24 +182,22 @@ const state = {
     },
   },
 };
-//IIFE of all my event listeners so it auto runs
-const eventRun = (() => {
-  //navigation bar turn off other classes and only turn on specified id
-  $('.sidePrint').on('click', state.runDisplay.printOn);
-  $('.sideVerify').on('click', state.runDisplay.verifyOn);
-  $('.sideLookup').on('click', state.runDisplay.lookupOn);
-  $('.sideAdd').on('click', state.runDisplay.addOn);
-  $('.sideContains').on('click', state.runDisplay.containsOn);
-  $('.sideUpdate').on('click', state.runDisplay.updateOn);
-  $('.sideDelete').on('click', state.runDisplay.deleteOn);
-  $('#sidebarCollapse').on('click', state.runDisplay.sideBarToggle);
-  //$('input[type=submit]').on('click', emptify);
-  //on submit button with id click, runs callback function
-  $('#print').on('click', state.runCommand.printify);
-  $('#verify').on('click', state.runCommand.verifying);
-  $('#lookup').on('click', state.runCommand.lookupfy);
-  $('#contains').on('click', state.runCommand.containfy);
-  $('#update').on('click', state.runCommand.updatefy);
-  $('#add').on('click', state.runCommand.addfy);
-  $('#delete').on('click', state.runCommand.deletefy);
-})();
+
+//navigation bar turn off other classes and only turn on specified id
+$('.sidePrint').on('click', state.runDisplay.printOn);
+$('.sideVerify').on('click', state.runDisplay.verifyOn);
+$('.sideLookup').on('click', state.runDisplay.lookupOn);
+$('.sideAdd').on('click', state.runDisplay.addOn);
+$('.sideContains').on('click', state.runDisplay.containsOn);
+$('.sideUpdate').on('click', state.runDisplay.updateOn);
+$('.sideDelete').on('click', state.runDisplay.deleteOn);
+$('#sidebarCollapse').on('click', state.runDisplay.sideBarToggle);
+//$('input[type=submit]').on('click', emptify);
+//on submit button with id click, runs callback function
+$('#print').on('click', state.runCommand.printify);
+$('#verify').on('click', state.runCommand.verifying);
+$('#lookup').on('click', state.runCommand.lookupfy);
+$('#contains').on('click', state.runCommand.containfy);
+$('#update').on('click', state.runCommand.updatefy);
+$('#add').on('click', state.runCommand.addfy);
+$('#delete').on('click', state.runCommand.deletefy);
