@@ -84,18 +84,29 @@ h6 {
     margin-right: 20px;
     padding: 20px;
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(6,1fr);
     grid-template-rows: auto;
     color: white;
 }
 
 tbody {
-    border-bottom: 1px solid white;
     grid-column: span 1;
     grid-row: span 1;
     display: flex;
     justify-content: left;
     align-items: center;
+    background-color: rgba(255,255,255,0.1);
+    margin: 5px 0;
+    transition: 0.5s;
+}
+tbody:nth-child(-n+6) {
+    background-color: rgba(255,255,255,0.6);
+}
+tbody:nth-child(n+7) {
+    background-color: rgba(255,255,255,0.4);
+}
+tbody:nth-child(n+13) {
+    background-color: rgba(255,255,255,0.2);
 }
 
 th, td {
@@ -103,6 +114,7 @@ th, td {
 }
 tbody:hover {
     background-color: rgba(47,23,0,.5);
+    transform: scale(1.06)
 }
 form {
     text-align: left;
@@ -208,7 +220,7 @@ a:hover {
     .default {position: absolute; top: 240px;}
 }
 
-@media (max-width: 1051px) {
+@media only screen and (max-width: 1051px) {
     #sidenav {
         margin-left: -250px;
     }
@@ -219,14 +231,40 @@ a:hover {
         position: absolute; top: 240px; left: 280px;
     }
 }
-@media (max-width: 450px) {
+
+@media only screen and (max-width: 450px) {
     #listArea {
         display: grid;
         grid-template-columns: repeat(1,1fr);
         grid-template-rows: auto;
     }
 }
-@media only screen and (max-height: 450px) {
-    #sidenav {padding-top: 15px;}
-    #sidenav a {font-size: 18px;}
+
+@media only screen and (max-width: 1440px) {
+    #listArea {
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: auto;
+    }
+    .default {
+        position: absolute; top: 320px; left: 320px;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .default {
+        position: absolute; left: 80px;
+    }
+}
+@media only screen and (max-height: 820px) {
+    #sidenav {
+        font-size: 18px;
+        padding-top: 155px;
+    }
+}
+@media only screen and (max-height: 620px) {
+    #sidenav {padding-top: 25px;}
+    #sidenav a {font-size: 16px;}
+    .default {
+        position: absolute; top: 150px;
+    }
 }
