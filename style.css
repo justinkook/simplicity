@@ -221,7 +221,7 @@ nav h1 {
 #sidenav {
     font-family: 'Montserrat', sans-serif;
     float:left; 
-    min-height: 100vh; /* Full-height: remove this if you want "auto" height */
+    max-height: 100vh; /* Full-height: remove this if you want "auto" height */
     width: 250px; /* Set the width of the sidebar */
     z-index: 1; /* Stay on top */
     top: 85px; /* Stay at the top */
