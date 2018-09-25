@@ -52,6 +52,7 @@ const state = {
       $('#updateForm').removeClass('displayOn');
       $('#deleteForm').removeClass('displayOn');
       $('#printForm').removeClass('displayOn');
+      $('main').addClass('darkLayer');
       $(sel).addClass('displayOn');
     },
     printOn: () => {
