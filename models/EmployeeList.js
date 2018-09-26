@@ -6,27 +6,27 @@ const mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 // Using the Schema constructor, create a new UserSchema object
-var itemSchema = new Schema({
-    itemName: {
+var employeeSchema = new Schema({
+    name: {
+        type: String,
+        trim: true,
+        required: "Name is Required"
+    },
+    officeNum: {
         type: String,
         trim: true,
         unique: true,
-        required: "Item Name is Required"
+        required: "Office Number is Required"
     },
-    itemCount: {
-        type: String,
-        trim: true,
-        required: "Item Count is Required"
-    },
-    itemID: {
+    phoneNum: {
         type: String,
         trim: true,
         unique: true,
-        required: "Item ID is Required"
+        required: "Phone Number is Required"
     }
 });
 // This creates our model from the above schema, using Mongoose's model method
-const Inventory = mongoose.model("Inventory", itemSchema);
+const EmployeeList = mongoose.model("EmployeeList", employeeSchema);
 
 // Export the Inventory model
-module.exports = Inventory;
+module.exports = EmployeeList;
